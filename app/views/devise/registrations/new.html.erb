@@ -1,7 +1,7 @@
 <div class="view-back">
   <div class="room-view">
 
-    <h2 class="page-tittle">ユーザー新規登録</h2>
+    <h1>Sign Up</h1>
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -25,7 +25,11 @@
       </div>
     
       <div class="actions">
-        <%= f.submit "登録する" %>
+        <div class="actions">
+        <div class="button-panel">
+          <input type="submit" class="button" title="Sign Up" value="Sign Up"></input>
+        </div>
+      </div>
       </div>
     <% end %>
     
@@ -33,7 +37,3 @@
 
   </div>
 </div>
-
-<footer class="footer">
-  <p>© 2020 POTEPAN.INC.</p>
-</footer>
