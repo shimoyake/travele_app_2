@@ -1,0 +1,61 @@
+<%= render "shared/header" %>
+
+<div class="view-back">
+    <div class="room-view">
+      <h1 class="page-tittle">予約内容確認</h1>
+        
+          <div class="room-show form-list">
+            <div class="room-image">
+              <% if @room.image.url%>
+                <%= image_tag @room.image.url ,width: "600px",height: "350px" %>
+              <%else%>
+                <p>画像がありません</p>
+              <%end%>
+            </div>
+            
+            <div class="room-info">
+              <%= form_with model: @reserve, url:new_reserf_path, local: true do |f| %>
+              <table>
+                <tr>
+                  <th>ルーム名</th>
+                  <td><%= @room.room_name %></td>
+                </tr>
+                <tr>
+                  <th>住所</th>
+                  <td><%= @room.address %></td>
+                </tr>
+                <tr>
+                  <th>チェックイン</th>
+                  <td><%= @reserve.begin %></td>
+                </tr>
+                <tr>
+                  <th>チェックアウト</th>
+                  <td><%= @reserve.end %></td>
+                </tr>
+                <tr>
+                  <th>人数</th>
+                  <td><%= @reserve.number_of_peple %>人</td>
+                </tr>
+                <tr>
+                  <th>宿泊日数</th>
+                  <td><%= ((@reserve.end.to_date) - (@reserve.begin.to_date)).to_i %>日</td>
+                </tr>
+                <tr>
+                  <th>合計料金</th>
+                  <td><%= (@room.room_price).to_i * ((@reserve.end.to_date) - (@reserve.begin.to_date)).to_i %>円</td>
+                </tr>
+              </table>
+                  <div class="button"><%= f.submit "予約する"%></div>
+                  <div class="button"><%= link_to "ルーム詳細へ戻る", "/rooms/#{params[:room_id]}" %></div>
+              <% end %>    
+            </div> 
+            
+          </div>
+        </div>
+          
+    </div>
+  </div>
+
+<footer class="footer">
+        <p>© 2020 POTEPAN.INC.</p>
+</footer>

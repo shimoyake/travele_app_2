@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<%= render "shared/header" %>
+
+    <div class="notifications">
+    </div>
+    <div class="top">
+    <div class="top-main">
+        <div class="container">
+            <div class="row col-lg-6">
+                <div class="form-fream">
+                    <div class="form-area">
+                        <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
+                        <%= form_tag(search_path, :method => 'get') do %>
+                            <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "search", placeholder: "エリアを入力"%>
+                            <%= submit_tag '検索' %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="panel-area m-5">
+            <h1 class="section-title">おすすめのエリア</h1>
+            <div class="row">
+                <div class="panel-item col-lg-3 col-6">
+                    <span>東京</span>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E6%9D%B1%E4%BA%AC"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" /></a>
+                    <div class="shadow"></div>
+                </div>
+                <div class="panel-item col-lg-3 col-6">
+                    <span>大阪</span>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E5%A4%A7%E9%98%AA"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" /></a>
+                    <div class="shadow"></div>
+                </div>
+                <div class="panel-item col-lg-3 col-6">
+                    <span>京都</span>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E4%BA%AC%E9%83%BD"><img class="panel-image shadow" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" /></a>
+                    <div class="shadow"></div>
+                </div>
+                <div class="panel-item col-lg-3 col-6">
+                    <span>札幌</span>
+                    <a href="https://4e6d311e267643cd814fbfd5c58e1a0b.vfs.cloud9.us-east-2.amazonaws.com/rooms/search?utf8=%E2%9C%93&search_area=%E6%9C%AD%E5%B9%8C"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" /></a>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <p>© 2020 POTEPAN.INC.</p>
+    </footer>
+    
+  </body>
+</html>

@@ -1,0 +1,280 @@
+
+
+li{
+  list-style: none;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+body{
+  margin:0px;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #000000;
+  margin-top: -58px;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    margin-top: 64px;
+    padding-top: 90px;
+    background-color: #111;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+}
+
+/*トップページ*/
+.top .top-main {
+    background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+    background-size: cover;
+    height: 650px;
+}
+.top .section-title {
+    font-size: 24px;
+    margin: 35px 0;
+    font-weight: bold;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.top span {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1;
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+}
+.top .panel-image {
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+.col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.top .form-area {
+    background: #fff;
+    padding: 24px;
+    border-radius: 5px;
+}
+.top .form-area-title {
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 1px;
+}
+.top .form-fream {
+    height: 650px;
+    display: flex;
+    align-items: center;
+}
+label {
+    display: block;
+}
+.header-left-nav form {
+    display: inline-block;
+}
+.header-left-nav .form-control {
+    width: 180px;
+    display: inline-block;
+    position: relative;
+    border-radius: 2px;    
+}
+
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+}
+.header-left-nav {
+    float: left;
+}
+
+/*ナビメニュー*/
+.header-nav-menu {
+    background-color: #fff;
+    border: 3px solid #F6F8F9;
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    padding: 15px;
+    z-index: 1000;
+}
+.header-nav-menu li {
+    line-height: 30px;
+    font-size: 16px;
+    padding: 3px 5px;
+}
+.header-right-nav {
+    float: right;
+}
+.header .nav-item {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+/*ルーム登録ページ*/
+.page-tittle{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.view-back{
+    padding: 100px auto;
+    display: flex;
+    margin-left: 50px;
+}
+.view-new{
+    width: 800px;
+    border-bottom: 1px solid #eaedef;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.form-list tr{
+    vertical-align: middle;
+    border-bottom: 1px solid #eaedef;
+    margin-top: 20px;
+}
+.form-list th{
+    padding-right: 100px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.form-list span{
+    color: #fff;
+    background-color: #ff0000a8;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 0 5px;
+}
+.button{
+    margin-top: 50px;
+    text-align: center;
+}
+input[type="text"] {
+        width: 300px;
+        height: 40px;
+}
+input[type="number"] {
+        width: 300px;
+        height: 40px;
+}
+input[type="date"] {
+        width: 300px;
+        height: 40px;
+}
+
+/*部屋詳細*/
+.room-view{
+    border-bottom: 1px solid #eaedef;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.room-show{
+    display: flex;
+}
+.room-image{
+    margin-right: 30px;
+    hight: auto;
+}
+
+/*検索結果*/
+.room-image-out {
+    position: relative;
+    width: 100%;
+    background: #F6F8F9;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+.room-image-box{
+   padding: 20px;
+   width: 300px;
+}
+.room-info{
+    text-align: center;
+}
+.form-box{
+    width: 320px;
+}
+
+/*アカウント設定　リンクメニュー*/
+.side-link li{
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.side-link{
+    margin-bottom: -150px;
+}
+.user-delete{
+    margin-top: 30px;
+    border-top: 1px solid #eaedef;
+}
+.user-delete h5{
+    padding-top: 10px;
+}
+
+.user-icon img{
+    border-radius: 70%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/*部屋一覧画面*/
+.room-table td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    border-top: 1px solid #eaedef;
+}
+.room-table th{
+    padding-right: 30px;
+    text-align: center;
+}
+
+/*登録、ログイン*/
+.actions{
+    margin-bottom: 30px;
+}

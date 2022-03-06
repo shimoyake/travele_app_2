@@ -1,0 +1,49 @@
+<%= render "shared/header" %>
+
+<ul class="side-link">
+  <li><%= link_to "アカウント設定", edit_user_registration_path %></li>
+  <li><%= link_to "プロフィール設定", '/users/profile' %></li>
+</ul>
+  
+    <div class="view-back">
+      <div class="view-new"> 
+      
+        <h1 class="page-tittle">プロフィール編集</h1>
+        
+          <%= form_with model: @user, url:users_profile_path, method: :post, local: true do |f| %>
+            <div class="form-list">
+              <table>
+                <tr>
+                  <th>アイコン画像</th>
+                  <td><div class="user-icon">
+                    <% if @user.image? %>
+                      <img src='<%= @user.image %>' class="icon" alt="ユーザーアイコン" width="150" height="150" >
+                    <% else %>
+                      <image src="/assets/default" class="icon" alt="ユーザーアイコン" width="150" height="150"%>
+                    <% end %>
+                    <%= f.file_field :image %></div></td>
+                </tr>
+         
+                <tr>
+                  <th><%= f.label :user_name ,"名前" %></th>
+                  <td><%= f.text_field :user_name %></td>
+                </tr>
+         
+                <tr>
+                  <th><%= f.label :user_introduction ,"自己紹介" %></th>
+                  <td><%= f.text_area :user_introduction, size: "30x7" %></td>
+                </tr>
+              </table>
+            </div>
+            
+            <%= hidden_field_tag :user_id, @user_id %>
+       
+            <div class="button"><%= f.submit "更新する"%></div>
+        
+          <% end %>
+      </div>
+    </div>
+
+<footer class="footer">
+  <p>© 2020 POTEPAN.INC.</p>
+</footer>

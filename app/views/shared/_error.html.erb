@@ -1,0 +1,9 @@
+<% if reserve.errors.any? %>
+  <div class = "alert">
+    <ul>
+      <% reserve.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

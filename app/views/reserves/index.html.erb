@@ -1,0 +1,48 @@
+<%= render "shared/header" %>
+
+<div class="view-back">
+  <div class="room-view">
+
+    <h1 class="page-tittle">予約済み部屋一覧</h1>
+      
+      <div class="room-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ルーム画像</th>
+              <th>ルーム名</th>
+              <th>料金</th>
+              <th>チェックイン</th>
+              <th>チェックアウト</th>
+              <th>予約確定日時</th>
+            </tr>
+          </thead>
+     
+          <tbody>
+            <% @reserves.each do |reserve| %>
+              <tr>
+                <td><% if reserve.room.image.url%>
+                      <%= image_tag reserve.room.image.url ,width: "330px",height: "180px" %>
+                    <%else%>
+                     <p>画像がありません</p>
+                    <%end%>
+                </td>
+                <td><%= reserve.room.room_name %></td>
+                <td><%= (reserve.room.room_price).to_i * ((reserve.end.to_date) - (reserve.begin.to_date)).to_i %>円</td>
+                <td><%= reserve.begin %></td>
+                <td><%= reserve.end %></td>
+                <td><%= reserve.created_at %></td>
+                <td><%= link_to "削除", reserve, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2020 POTEPAN.INC.</p>
+</footer>
+    

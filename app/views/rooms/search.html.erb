@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+
+<div class="view-back">
+  <div class="room-view">
+
+    <h1 class="page-tittle">"<%= @search_result %>"の検索結果(<%= @rooms.count %>件)</h1>
+      
+      <div class="room-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ルーム画像</th>
+              <th>ルーム名</th>
+              <th>ルーム紹介</th>
+              <th>料金</th>
+              <th>住所</th>
+            </tr>
+          </thead>
+     
+          <tbody>
+            <% @rooms.each do |room| %>
+              <tr>
+                <td><% if room.image.url%>
+                      <%= image_tag room.image.url ,width: "330px",height: "180px" %>
+                    <%else%>
+                     <p>画像がありません</p>
+                    <%end%>
+                </td>
+                <td><%= room.room_name %></td>
+                <td><%= room.introduction %></td>
+                <td><%= room.room_price %>円/日</td>
+                <td><%= room.address %></td>
+                <td><%= link_to "ルーム詳細へ", room %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2020 POTEPAN.INC.</p>
+</footer>

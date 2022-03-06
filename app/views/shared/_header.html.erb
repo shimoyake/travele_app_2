@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PoteShare</title>
+    
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="1Fb/oz+SfOmd2tsfO8DUMVnHaObyX35OCG1DWb2A0us+bzHVVyfFHJ1q1Y21OzbRgk7ig3JU0xxUtYqwM3EZ0Q==" />
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+
+<header class="header">
+  <div class="header-inner">
+    
+    <div class="header-left-nav">
+        <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" /></a>
+          <div class="header-sharch d-lg-inline-block d-none">
+            <i class="fas fa-map-marker-alt"></i>
+            <%= form_tag(search_path, :method => 'get') do %>
+              <%= text_field_tag :search_area, params[:search_area], class: "form-control", id: "room_area", placeholder: "エリアを入力"%>
+            <% end %>
+          </div>
+          <div class="header-sharch d-lg-inline-block d-none">
+            <i class="fas fa-search"></i>
+            <%= form_tag(search_path, :method => 'get') do %>
+              <%= text_field_tag :search, params[:search], class: "form-control", id: "search", placeholder: "キーワードを入力"%>
+            <% end %>
+          </div>
+        <input type="submit" name="commit" value="" class="d-none" data-disable-with="" /></form>    
+    </div>
+        
+    <div class="header-right-nav">
+      <div class="nav-item d-sm-inline-block d-none">
+        <% if @user.user_name? %>
+          <%= @user.user_name %>
+        <% else %>
+          <p>ようこそ！</p>
+        <% end %>
+      </div>
+        <div class="nav-item">
+          <div class="mx-3 p-1 host-icon nav-trigger user-icon" alt="メニュー">
+            <% if @user.image? %>
+              <img src='<%= @user.image %>' class="icon" alt="ユーザーアイコン" width="50" height="50" >
+            <% else %>
+              <image src="/assets/default" class="icon" alt="ユーザーアイコン" width="50" height="50"%>
+            <% end %>
+          </div>
+        
+          <ul class="header-nav-menu">
+            <li><a href="/rooms/new">ルーム登録</a></li>
+            <li><a href="/reserves">予約済みルーム一覧</a></li>
+            <li><a href="/rooms">登録済みルーム一覧</a></li>
+            <li><a href="/users/profile">設定</a></li>
+            <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    $(function() {
+      $('.nav-trigger').click(function() {
+            $('.header-nav-menu').toggle(1500);
+        })
+    });
+  </script>
+
+</header>
+</html>

@@ -1,0 +1,65 @@
+<%= render "shared/header" %>
+
+
+  <div class="view-back">
+    <div class="room-view">
+      <h1 class="page-tittle">部屋情報</h1>
+        
+          <div class="room-show form-list">
+            <div class="room-image">
+              <% if @room.image.url%>
+                <%= image_tag @room.image.url ,width: "600px",height: "350px" %>
+              <%else%>
+                <p>画像がありません</p>
+              <%end%>
+            </div>
+            
+            <div class="room-info">
+               <table>
+                  <tr>
+                    <th>ルーム名</th>
+                    <td><%= @room.room_name %></td>
+                  </tr>
+                  <tr>
+                    <th>ルーム情報</th>
+                    <td><%= @room.introduction %></td>
+                  </tr>
+                  <tr>
+                    <th>料金</th>
+                    <td><%= @room.room_price %>円/日</td>
+                  </tr>
+                    <th>住所</th>
+                    <td><%= @room.address %></td>
+                  </tr>
+                </table>
+                
+                 <%= form_with model: @reserve, url:reserves_confirm_path, local: true do |f| %> <!--ルーティングエラー：url:飛ばしたいパス-->
+                  <table>
+                      <th><%= f.label :begin ,"チェックイン" %><span>必須</span></th>
+                      <td><%= f.date_field :begin, min: Date.current%></td>
+                    </tr>
+             
+                    <tr>
+                      <th><%= f.label :end ,"チェックアウト" %><span>必須</span></th>
+                      <td><%= f.date_field :end, min: Date.current%></td>
+                    </tr>
+             
+                    <tr>
+                      <th><%= f.label :number_of_peple ,"人数" %><span>必須</span></th>
+                      <td><%= f.number_field :number_of_peple, min: 1 %></td>
+                    </tr>
+                  </table>
+                  
+                  <%= f.hidden_field :room_id, value: @room.id %>
+             
+                  <div class="button"><%= f.submit "予約する"%></div>
+            </div>
+          </div>
+        </div>
+          <% end %>
+    </div>
+  </div>
+
+<footer class="footer">
+  <p>© 2020 POTEPAN.INC.</p>
+</footer>

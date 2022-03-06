@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  begin: MyString
+  end: MyString
+  number_of_peple: MyString
+  user_id: 1
+  room_id: 1
+
+two:
+  begin: MyString
+  end: MyString
+  number_of_peple: MyString
+  user_id: 1
+  room_id: 1
