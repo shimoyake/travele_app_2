@@ -1,5 +1,5 @@
 <div class="view-back">
-  <div class="room-view">
+  <div class="settion_view">
 
     <h1>Sign In</h1>
     
@@ -14,20 +14,16 @@
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
     
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-    
       <div class="actions">
         <div class="button-panel">
           <input type="submit" class="button" title="Sign In" value="Sign In"></input>
         </div>
       </div>
     <% end %>
-    <%= render "devise/shared/links" %>
+    
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to "新規登録はこちら", new_registration_path(resource_name) %><br />
+    <% end %>
   
   </div>
 </div>

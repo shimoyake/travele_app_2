@@ -161,7 +161,7 @@ label {
 .view-back{
     padding: 100px auto;
     display: flex;
-    margin-left: 50px;
+    text-aling: center;
 }
 .view-new{
     width: 800px;
@@ -275,15 +275,17 @@ input[type="date"] {
 }
 
 /*登録、ログイン*/
+.settion_view{
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+}
+.field{
+    margin-top: 40px;
+}
 .actions{
     margin-bottom: 30px;
 }
-
-.button-panel {
-  margin: 2em 0 0;
-  width: 100%;
-}
-
 .button-panel .button {
   background: #f16272;
   border: none;
@@ -298,7 +300,6 @@ input[type="date"] {
   transition: background 0.3s ease-in-out;
   width: 100%;
 }
-
 .button:hover {
   background: #ee3e52;
 }
