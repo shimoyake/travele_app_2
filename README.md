@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Railsを使用した旅館予約サイトです。
 
-Things you may want to cover:
+
+実装した主な機能:
 
 * Ruby version
 
-* System dependencies
+* 部屋情報の登録
 
-* Configuration
+* 部屋の予約（料金精算は発生しません）
 
-* Database creation
+* エリア検索、フリーワード検索
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* アカウント情報の修正（メールアドレスなど）、プロフィールの設定（アイコン画像、自己紹介など）
